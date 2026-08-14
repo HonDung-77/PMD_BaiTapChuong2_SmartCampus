@@ -5,6 +5,7 @@ import CourseCard from './components/CourseCard';
 import { CustomButton, IconButton } from './components/CustomButton';
 import { AnnouncementsFeed } from './components/AnnouncementsFeed';
 import { SectionedAnnouncements } from './components/SectionedAnnouncements';
+import { ResponsiveCourseGrid } from './components/ResponsiveCourseGrid';
 
 export default function App() {
   const [loading, setLoading] = useState(false);
@@ -44,10 +45,15 @@ export default function App() {
         <IconButton icon="🔍" onPress={() => { }} accessibilityLabel="Tìm kiếm" />
         <IconButton icon="⚙️" onPress={() => { }} accessibilityLabel="Cài đặt" disabled />
       </View> */}
+
       {/* EXERCISE 5: FlatList Migration */}
       {/* <AnnouncementsFeed /> */}
+
       {/* EXERCISE 6 */}
-      <SectionedAnnouncements />
+      {/* <SectionedAnnouncements /> */}
+
+      {/* EXERCISE 7 */}
+      <ResponsiveCourseGrid />
     </ScrollView>
   );
 }

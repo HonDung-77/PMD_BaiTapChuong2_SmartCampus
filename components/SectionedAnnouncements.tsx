@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import { Announcement } from './AnnouncementsFeed';
 
-// 1. Cấu trúc Section chuẩn (Mục 2.11)
 interface AnnouncementSection {
   title: string;
   data: Announcement[];
