@@ -6,6 +6,7 @@ import { CustomButton, IconButton } from './components/CustomButton';
 import { AnnouncementsFeed } from './components/AnnouncementsFeed';
 import { SectionedAnnouncements } from './components/SectionedAnnouncements';
 import { ResponsiveCourseGrid } from './components/ResponsiveCourseGrid';
+import { KeyboardSafeForm } from './components/KeyboardSafeForm';
 
 export default function App() {
   const [loading, setLoading] = useState(false);
@@ -53,7 +54,10 @@ export default function App() {
       {/* <SectionedAnnouncements /> */}
 
       {/* EXERCISE 7 */}
-      <ResponsiveCourseGrid />
+      {/* <ResponsiveCourseGrid /> */}
+
+      {/* EXERCISE 8 */}
+      <KeyboardSafeForm />
     </ScrollView>
   );
 }
