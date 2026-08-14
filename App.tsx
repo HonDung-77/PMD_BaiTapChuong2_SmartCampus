@@ -7,6 +7,7 @@ import { AnnouncementsFeed } from './components/AnnouncementsFeed';
 import { SectionedAnnouncements } from './components/SectionedAnnouncements';
 import { ResponsiveCourseGrid } from './components/ResponsiveCourseGrid';
 import { KeyboardSafeForm } from './components/KeyboardSafeForm';
+import { ValidatedForm } from './components/ValidatedForm';
 
 export default function App() {
   const [loading, setLoading] = useState(false);
@@ -57,7 +58,10 @@ export default function App() {
       {/* <ResponsiveCourseGrid /> */}
 
       {/* EXERCISE 8 */}
-      <KeyboardSafeForm />
+      {/* <KeyboardSafeForm /> */}
+
+      {/* EXERCISE 9 */}
+      <ValidatedForm />
     </ScrollView>
   );
 }
