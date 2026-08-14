@@ -1,11 +1,21 @@
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import CourseCard from './components/CourseCard';
+import { CustomButton, IconButton } from './components/CustomButton';
 
 export default function App() {
+  const [loading, setLoading] = useState(false);
+
+  const handlePress = () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 2000); // Giả lập bấm nút loading trong 2 giây
+  };
+
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <StatusBar style="auto" />
+
       <CourseCard
         title="Lập trình cho thiết bị di động"
         instructor="Phạm Thị Hồng Dung"
@@ -13,16 +23,48 @@ export default function App() {
         onViewDetail={() => console.log('view detail')}
         onEnroll={() => console.log('enroll')}
       />
-    </View>
+
+
+      {/* 1. Nút bình thường / Đang nhấn */}
+      <CustomButton label="Primary Button" onPress={handlePress} />
+
+      {/* 2. Trạng thái Loading */}
+      <CustomButton label="Primary Loading" onPress={() => { }} loading={loading} />
+
+      {/* 3. Trạng thái Disabled (Vô hiệu hóa) */}
+      <CustomButton label="Primary Disabled" onPress={() => { }} disabled />
+
+      {/* 4. Secondary Button */}
+      <CustomButton label="Secondary Button" variant="secondary" onPress={() => { }} />
+
+      {/* 5. Icon Buttons */}
+      <View style={styles.row}>
+        <IconButton icon="🔍" onPress={() => { }} accessibilityLabel="Tìm kiếm" />
+        <IconButton icon="⚙️" onPress={() => { }} accessibilityLabel="Cài đặt" disabled />
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    paddingTop: 60,
+    paddingBottom: 40,
+    paddingHorizontal: 20,
+    backgroundColor: '#f5f5f5',
+    gap: 12,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 16,
+    marginBottom: 4,
+    color: '#1a1a1a',
+  },
+  row: {
+    flexDirection: 'row',
     justifyContent: 'center',
-    paddingHorizontal: 16,
+    gap: 16,
+    marginTop: 8,
   },
 });

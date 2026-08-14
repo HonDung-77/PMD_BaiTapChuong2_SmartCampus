@@ -22,7 +22,6 @@ function CourseThumbnail({ uri, alt, isDecorative = false }: CourseThumbnailProp
   const [status, setStatus] = useState<ImageStatus>(uri ? "loading" : "error");
 
   return (
-    // ✅ BẮT BUỘC: Khung thumbWrap luôn bọc ngoài để giữ tỷ lệ 16/9 chuẩn
     <View style={styles.thumbWrap}>
       {!uri || status === "error" ? (
         <FallbackThumb />
@@ -116,7 +115,7 @@ export default function CourseCard({
 
 const styles = StyleSheet.create({
   card: {
-    width: "100%", // Giãn hết chiều rộng container
+    width: "100%",
     borderRadius: 12,
     overflow: "hidden",
     backgroundColor: "#fff",
@@ -167,7 +166,7 @@ const styles = StyleSheet.create({
   },
   buttonSecondary: {
     flex: 1,
-    minHeight: 44, // Đạt chuẩn độ rộng vùng bấm (Touch target)
+    minHeight: 44,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: "#ccc",
     borderRadius: 8,
@@ -187,6 +186,6 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   pressed: {
-    opacity: 0.7, // Hiệu ứng chạm tay
+    opacity: 0.7,
   },
 });
