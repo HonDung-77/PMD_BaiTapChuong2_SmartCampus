@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import CourseCard from './components/CourseCard';
 import { CustomButton, IconButton } from './components/CustomButton';
 import { AnnouncementsFeed } from './components/AnnouncementsFeed';
+import { SectionedAnnouncements } from './components/SectionedAnnouncements';
 
 export default function App() {
   const [loading, setLoading] = useState(false);
@@ -44,7 +45,9 @@ export default function App() {
         <IconButton icon="⚙️" onPress={() => { }} accessibilityLabel="Cài đặt" disabled />
       </View> */}
       {/* EXERCISE 5: FlatList Migration */}
-      <AnnouncementsFeed />
+      {/* <AnnouncementsFeed /> */}
+      {/* EXERCISE 6 */}
+      <SectionedAnnouncements />
     </ScrollView>
   );
 }
