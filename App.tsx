@@ -8,6 +8,7 @@ import { SectionedAnnouncements } from './components/SectionedAnnouncements';
 import { ResponsiveCourseGrid } from './components/ResponsiveCourseGrid';
 import { KeyboardSafeForm } from './components/KeyboardSafeForm';
 import { ValidatedForm } from './components/ValidatedForm';
+import { AccessibleAnnouncementCard } from './components/AccessibleAnnouncementCard';
 
 export default function App() {
   const [loading, setLoading] = useState(false);
@@ -20,14 +21,14 @@ export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <StatusBar style="auto" />
-      {/* EXERCISE 3: CourseCard
+      {/* EXERCISE 3: CourseCard */}
       <CourseCard
         title="Lập trình cho thiết bị di động"
         instructor="Phạm Thị Hồng Dung"
         credits={3}
         onViewDetail={() => console.log('view detail')}
         onEnroll={() => console.log('enroll')}
-      /> */}
+      />
 
       {/* EXERCISE 4: Press-State System */}
       {/* 1. Nút bình thường / Đang nhấn */}
@@ -61,7 +62,15 @@ export default function App() {
       {/* <KeyboardSafeForm /> */}
 
       {/* EXERCISE 9 */}
-      <ValidatedForm />
+      {/* <ValidatedForm /> */}
+
+      {/*  EXERCISE 10 */}
+      {/* <AccessibleAnnouncementCard
+        title="Thông báo kiểm tra chuẩn Accessibility (VoiceOver / TalkBack)"
+        category="Academic"
+        date="14/08/2026"
+        onPress={() => alert('Thẻ đạt chuẩn Accessibility!')}
+      /> */}
     </ScrollView>
   );
 }
